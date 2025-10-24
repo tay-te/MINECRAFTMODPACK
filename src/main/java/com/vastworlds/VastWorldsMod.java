@@ -1,29 +1,30 @@
 package com.vastworlds;
 
-import net.fabricmc.api.ModInitializer;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.Biome;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class VastWorldsMod implements ModInitializer {
+@Mod(VastWorldsMod.MOD_ID)
+public class VastWorldsMod {
     public static final String MOD_ID = "vastworlds";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     // Biome Registry Keys
-    public static final RegistryKey<Biome> MEGA_MOUNTAINS = RegistryKey.of(RegistryKeys.BIOME,
-        Identifier.of(MOD_ID, "mega_mountains"));
-    public static final RegistryKey<Biome> ENDLESS_PLAINS = RegistryKey.of(RegistryKeys.BIOME,
-        Identifier.of(MOD_ID, "endless_plains"));
-    public static final RegistryKey<Biome> DEEP_CANYONS = RegistryKey.of(RegistryKeys.BIOME,
-        Identifier.of(MOD_ID, "deep_canyons"));
-    public static final RegistryKey<Biome> SKY_PLATEAUS = RegistryKey.of(RegistryKeys.BIOME,
-        Identifier.of(MOD_ID, "sky_plateaus"));
+    public static final ResourceKey<Biome> MEGA_MOUNTAINS = ResourceKey.create(Registries.BIOME,
+        ResourceLocation.fromNamespaceAndPath(MOD_ID, "mega_mountains"));
+    public static final ResourceKey<Biome> ENDLESS_PLAINS = ResourceKey.create(Registries.BIOME,
+        ResourceLocation.fromNamespaceAndPath(MOD_ID, "endless_plains"));
+    public static final ResourceKey<Biome> DEEP_CANYONS = ResourceKey.create(Registries.BIOME,
+        ResourceLocation.fromNamespaceAndPath(MOD_ID, "deep_canyons"));
+    public static final ResourceKey<Biome> SKY_PLATEAUS = ResourceKey.create(Registries.BIOME,
+        ResourceLocation.fromNamespaceAndPath(MOD_ID, "sky_plateaus"));
 
-    @Override
-    public void onInitialize() {
+    public VastWorldsMod(IEventBus modEventBus) {
         LOGGER.info("========================================");
         LOGGER.info("Initializing Vast Worlds Mod");
         LOGGER.info("========================================");
