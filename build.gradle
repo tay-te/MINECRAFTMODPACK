@@ -1,6 +1,9 @@
 plugins {
-    id 'fabric-loom' version '1.11-SNAPSHOT'
+    id 'java-library'
+    id 'eclipse'
+    id 'idea'
     id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.115'
 }
 
 version = project.mod_version
@@ -10,58 +13,75 @@ base {
     archivesName = project.archives_base_name
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+    withSourcesJar()
+}
+
 repositories {
-    // Add repositories to retrieve artifacts from in here.
     mavenCentral()
 }
 
-dependencies {
-    // To change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+neoForge {
+    version = project.neoforge_version
 
-    // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    runs {
+        client {
+            client()
+        }
+
+        server {
+            server()
+            programArguments.add('nogui')
+        }
+    }
+
+    mods {
+        vastworlds {
+            sourceSet sourceSets.main
+        }
+    }
 }
 
-processResources {
-    inputs.property "version", project.version
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+        minecraft_version: minecraft_version,
+        neoforge_version: neoforge_version,
+        mod_version: mod_version,
+        mod_id: 'vastworlds',
+        mod_name: 'Vast Worlds',
+        mod_authors: 'VastWorlds Team',
+        mod_description: 'Massive terrain generation overhaul - Experience truly vast and epic Minecraft landscapes'
+    ]
+    inputs.properties replaceProperties
 
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.release = 21
+    options.encoding = 'UTF-8'
 }
 
-java {
-    // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-    // if it is present.
-    withSourcesJar()
-
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-}
-
-jar {
-    from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}" }
-    }
-}
-
-// configure the maven publication
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        register('mavenJava', MavenPublication) {
             from components.java
         }
     }
-
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
+        maven {
+            url "file://${project.projectDir}/repo"
+        }
+    }
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
     }
 }

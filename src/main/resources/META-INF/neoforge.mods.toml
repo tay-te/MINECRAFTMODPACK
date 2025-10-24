@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+showAsResourcePack = false
+
+[[mods]]
+modId = "vastworlds"
+version = "${mod_version}"
+displayName = "Vast Worlds"
+authors = "VastWorlds Team"
+description = '''
+Massive terrain generation overhaul - Experience truly vast and epic Minecraft landscapes
+'''
+logoFile = "assets/vastworlds/icon.png"
+
+[[dependencies.vastworlds]]
+modId = "neoforge"
+type = "required"
+versionRange = "[${neoforge_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.vastworlds]]
+modId = "minecraft"
+type = "required"
+versionRange = "[${minecraft_version},)"
+ordering = "NONE"
+side = "BOTH"
