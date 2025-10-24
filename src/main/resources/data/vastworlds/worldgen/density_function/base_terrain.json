@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:add",
+  "argument1": {
+    "type": "minecraft:mul",
+    "argument1": {
+      "type": "minecraft:noise",
+      "noise": "minecraft:jagged",
+      "xz_scale": 0.5,
+      "y_scale": 0
+    },
+    "argument2": 80.0
+  },
+  "argument2": {
+    "type": "minecraft:noise",
+    "noise": "minecraft:continentalness",
+    "xz_scale": 0.25,
+    "y_scale": 0
+  }
+}

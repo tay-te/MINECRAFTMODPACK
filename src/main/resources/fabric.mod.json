@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "vastworlds",
+  "version": "${version}",
+  "name": "Vast Worlds",
+  "description": "Massive terrain generation overhaul - Experience truly vast and epic Minecraft landscapes",
+  "authors": [
+    "VastWorlds Team"
+  ],
+  "contact": {
+    "homepage": "https://vastworlds.com/",
+    "sources": "https://github.com/vastworlds/vastworlds"
+  },
+  "license": "MIT",
+  "icon": "assets/vastworlds/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.vastworlds.VastWorldsMod"
+    ]
+  },
+  "mixins": [
+    "vastworlds.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
