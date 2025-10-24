@@ -85,7 +85,7 @@
       "type": "minecraft:add",
       "argument1": {
         "type": "minecraft:mul",
-        "argument1": 4,
+        "argument1": 5,
         "argument2": {
           "type": "minecraft:quarter_negative",
           "argument": {
@@ -93,13 +93,13 @@
             "argument1": {
               "type": "minecraft:y_clamped_gradient",
               "from_y": -64,
-              "to_y": 320,
-              "from_value": 1.5,
-              "to_value": -1.5
+              "to_y": 150,
+              "from_value": 1.8,
+              "to_value": -1.8
             },
             "argument2": {
               "type": "minecraft:add",
-              "argument1": -0.703125,
+              "argument1": -0.2,
               "argument2": "vastworlds:offset"
             }
           }
@@ -108,58 +108,47 @@
       "argument2": "vastworlds:factor"
     },
     "final_density": {
-      "type": "minecraft:interpolated",
-      "argument": {
-        "type": "minecraft:blend_density",
+      "type": "minecraft:add",
+      "argument1": {
+        "type": "minecraft:interpolated",
         "argument": {
-          "type": "minecraft:mul",
-          "argument1": {
+          "type": "minecraft:blend_density",
+          "argument": {
             "type": "minecraft:add",
             "argument1": {
-              "type": "minecraft:noise",
-              "noise": "minecraft:jagged",
-              "xz_scale": 1.5,
-              "y_scale": 1.5
-            },
-            "argument2": {
-              "type": "minecraft:add",
-              "argument1": 0.05,
-              "argument2": {
-                "type": "minecraft:mul",
+              "type": "minecraft:mul",
+              "argument1": {
+                "type": "minecraft:add",
                 "argument1": {
-                  "type": "minecraft:y_clamped_gradient",
-                  "from_y": -64,
-                  "to_y": -40,
-                  "from_value": 1,
-                  "to_value": 0
+                  "type": "minecraft:noise",
+                  "noise": "minecraft:jagged",
+                  "xz_scale": 1.5,
+                  "y_scale": 1.5
                 },
                 "argument2": {
                   "type": "minecraft:add",
-                  "argument1": -0.05,
+                  "argument1": 0.05,
                   "argument2": {
-                    "type": "minecraft:add",
+                    "type": "minecraft:mul",
                     "argument1": {
-                      "type": "minecraft:mul",
-                      "argument1": {
-                        "type": "minecraft:y_clamped_gradient",
-                        "from_y": 200,
-                        "to_y": 256,
-                        "from_value": 1,
-                        "to_value": 0
-                      },
-                      "argument2": -0.05
+                      "type": "minecraft:y_clamped_gradient",
+                      "from_y": -64,
+                      "to_y": -40,
+                      "from_value": 1,
+                      "to_value": 0
                     },
                     "argument2": {
                       "type": "minecraft:add",
-                      "argument1": {
-                        "type": "minecraft:noise",
-                        "noise": "minecraft:continentalness",
-                        "xz_scale": 0.1,
-                        "y_scale": 0
-                      },
+                      "argument1": -0.05,
                       "argument2": {
                         "type": "minecraft:add",
                         "argument1": {
+                          "type": "minecraft:noise",
+                          "noise": "minecraft:continentalness",
+                          "xz_scale": 0.1,
+                          "y_scale": 0
+                        },
+                        "argument2": {
                           "type": "minecraft:mul",
                           "argument1": {
                             "type": "minecraft:noise",
@@ -168,31 +157,41 @@
                             "y_scale": 0
                           },
                           "argument2": 0.5
-                        },
-                        "argument2": {
-                          "type": "minecraft:mul",
-                          "argument1": {
-                            "type": "minecraft:y_clamped_gradient",
-                            "from_y": 0,
-                            "to_y": 128,
-                            "from_value": -1,
-                            "to_value": 1
-                          },
-                          "argument2": 1.5
                         }
                       }
                     }
                   }
                 }
+              },
+              "argument2": {
+                "type": "minecraft:y_clamped_gradient",
+                "from_y": -64,
+                "to_y": 0,
+                "from_value": 0,
+                "to_value": 1
               }
-            }
-          },
-          "argument2": {
+            },
+            "argument2": "vastworlds:base_terrain"
+          }
+        }
+      },
+      "argument2": {
+        "type": "minecraft:mul",
+        "argument1": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": 80,
+          "to_y": 150,
+          "from_value": 0,
+          "to_value": -2.5
+        },
+        "argument2": {
+          "type": "minecraft:cube",
+          "argument": {
             "type": "minecraft:y_clamped_gradient",
-            "from_y": -64,
-            "to_y": 0,
+            "from_y": 80,
+            "to_y": 150,
             "from_value": 0,
-            "to_value": 1
+            "to_value": 1.0
           }
         }
       }
