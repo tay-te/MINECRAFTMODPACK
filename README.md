@@ -1,8 +1,8 @@
 # Vast Worlds - Terrain Generation Overhaul
 
 **Version:** 1.0.0
-**Minecraft:** 1.21.10
-**Mod Loader:** Fabric
+**Minecraft:** 1.21.1
+**Mod Loader:** NeoForge
 
 ## Overview
 
@@ -47,10 +47,9 @@ The mod introduces 4 unique biomes, each with dramatically different terrain cha
 
 ## Installation
 
-1. Install [Fabric Loader](https://fabricmc.net/) 0.17.2 or newer
-2. Install [Fabric API](https://modrinth.com/mod/fabric-api) 0.136.0+1.21.10 or newer
-3. Place `vastworlds-1.0.0.jar` in your `.minecraft/mods` folder
-4. Launch Minecraft and create a new world
+1. Install [NeoForge](https://neoforged.net/) 21.1.78 or newer for Minecraft 1.21.1
+2. Place `vastworlds-1.0.0.jar` in your `.minecraft/mods` folder
+3. Launch Minecraft and create a new world
 
 ## Building from Source
 
@@ -89,10 +88,10 @@ src/main/
 ### Requirements
 
 - Java 21+
-- Gradle 9.0+
-- Minecraft 1.21.10
-- Fabric Loader 0.17.2+
-- Fabric API 0.136.0+1.21.10
+- Gradle 8.10+
+- Minecraft 1.21.1
+- NeoForge 21.1.78+
+- ModDevGradle 2.0.115
 
 ## Usage Tips
 
@@ -129,9 +128,9 @@ You can modify biome generation by editing the JSON files in `data/vastworlds/wo
 
 ## Credits
 
-- Built with Fabric API
+- Built with NeoForge
 - Terrain noise system based on vanilla Minecraft's multi-noise system
-- Created for Minecraft 1.21.10
+- Created for Minecraft 1.21.1
 
 ## License
 
