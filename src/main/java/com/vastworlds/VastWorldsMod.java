@@ -1,74 +1,36 @@
 package com.vastworlds;
 
-import com.vastworlds.biome.ModBiomes;
-import com.vastworlds.worldgen.VastWorldsSurfaceRules;
-import com.vastworlds.worldgen.carver.VastWorldsCarvers;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import com.vastworlds.biome.VastBiomes;
+import com.vastworlds.biome.VastWorldsRegion;
+import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import terrablender.api.Regions;
+import terrablender.api.TerraBlenderApi;
 
-/**
- * Main mod class for Vast Worlds.
- * Refactored to use BiomesOPlenty patterns with TerraBlender integration.
- */
-@Mod(VastWorldsMod.MOD_ID)
-public class VastWorldsMod {
-    public static final String MODID = "vastworlds";
-    public static final String MOD_ID = MODID;  // Backwards compatibility
-    public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
+public class VastWorldsMod implements ModInitializer, TerraBlenderApi {
+	public static final String MOD_ID = "vastworlds";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public VastWorldsMod(IEventBus modEventBus) {
-        LOGGER.info("========================================");
-        LOGGER.info("Initializing Vast Worlds Mod");
-        LOGGER.info("========================================");
+	@Override
+	public void onInitialize() {
+		LOGGER.info("Vast Worlds is initializing - Prepare for epic terrain generation!");
 
-        // Initialize biome registry
-        ModBiomes.setup();
+		// Initialize biome keys
+		VastBiomes.init();
 
-        // Register custom carvers
-        VastWorldsCarvers.register(modEventBus);
+		LOGGER.info("Vast Worlds initialization complete! Biomes are ready.");
+	}
 
-        // Register setup event for TerraBlender integration
-        modEventBus.addListener(this::commonSetup);
+	@Override
+	public void onTerraBlenderInitialized() {
+		LOGGER.info("Registering Vast Worlds region with TerraBlender...");
 
-        LOGGER.info("Custom biomes registered:");
-        LOGGER.info("  - Mega Mountains (extreme peaks with snow)");
-        LOGGER.info("  - Endless Plains (vast flat grasslands)");
-        LOGGER.info("  - Deep Canyons (dramatic valleys and cliffs)");
-        LOGGER.info("  - Sky Plateaus (high plateaus with steep drops)");
-        LOGGER.info("========================================");
-        LOGGER.info("Terrain generation: BiomesOPlenty-style system");
-        LOGGER.info("Using TerraBlender for biome distribution");
-        LOGGER.info("Terrain slices: Peaks, High, Mid, Low, Valleys");
-        LOGGER.info("========================================");
-    }
+		// Register our custom region with a weight of 2 (vanilla has weight of 10)
+		// This means our biomes will appear alongside vanilla biomes
+		Regions.register(new VastWorldsRegion(2));
 
-    /**
-     * Common setup event - registers TerraBlender region and surface rules.
-     * This runs after registries are available.
-     */
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            LOGGER.info("Running common setup for Vast Worlds...");
-
-            // Setup TerraBlender integration (registers regions)
-            ModBiomes.setupTerraBlender();
-
-            // Register surface rules
-            VastWorldsSurfaceRules.registerSurfaceRules();
-
-            LOGGER.info("========================================");
-            LOGGER.info("Vast Worlds initialized successfully!");
-            LOGGER.info("========================================");
-        });
-    }
-
-    /**
-     * Setup TerraBlender - called from platform-specific setup
-     */
-    public static void setupTerraBlender() {
-        ModBiomes.setupTerraBlender();
-    }
+		LOGGER.info("Vast Worlds region registered successfully!");
+		LOGGER.info("Find biomes with /locatebiome vastworlds:mega_plains (or towering_hills, deep_valley)");
+	}
 }

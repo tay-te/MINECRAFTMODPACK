@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "vastworlds",
+  "version": "${version}",
+  "name": "Vast Worlds",
+  "description": "Experience epic terrain generation with massive biomes and dramatic landscapes",
+  "authors": [
+    "VastWorlds Team"
+  ],
+  "contact": {
+    "homepage": "https://github.com/vastworlds",
+    "sources": "https://github.com/vastworlds"
+  },
+  "license": "MIT",
+  "icon": "assets/vastworlds/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.vastworlds.VastWorldsMod"
+    ],
+    "terrablender": [
+      "com.vastworlds.VastWorldsMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "terrablender": "*"
+  },
+  "suggests": {}
+}

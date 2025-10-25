@@ -1,116 +1,98 @@
 plugins {
-    id 'java-library'
-    id 'eclipse'
-    id 'idea'
-    id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.115'
+	id 'fabric-loom' version '1.11-SNAPSHOT'
+	id 'maven-publish'
 }
 
 version = project.mod_version
 group = project.maven_group
 
 base {
-    archivesName = project.archives_base_name
-}
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-    withSourcesJar()
-}
-
-// Include generated resources in the main sourceSet
-sourceSets {
-    main {
-        resources {
-            srcDir 'src/generated/resources'
-        }
-    }
+	archivesName = project.archives_base_name
 }
 
 repositories {
-    mavenCentral()
-    maven {
-        name = "Modrinth Maven"
-        url = "https://api.modrinth.com/maven"
-    }
+	mavenCentral()
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/releases"
+	}
+	maven {
+		name = "Jitpack"
+		url = "https://jitpack.io"
+	}
+	maven {
+		name = "CurseForge"
+		url = "https://cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
+	maven {
+		name = "Sponge"
+		url = "https://repo.spongepowered.org/repository/maven-public/"
+	}
+	maven {
+		name = "TerraBlender"
+		url = "https://maven.minecraftforge.net/"
+	}
 }
 
 dependencies {
-    implementation "maven.modrinth:terrablender:4.1.0.3-neoforge"
+	// Fabric
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// TerraBlender for biome integration (using GitHub/Jitpack like BiomesOPlenty)
+	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
+
+	// NightConfig - required by TerraBlender (bundle with include)
+	include implementation("com.electronwill.night-config:core:${project.nightconfig_version}")
+	include implementation("com.electronwill.night-config:toml:${project.nightconfig_version}")
 }
 
-neoForge {
-    version = project.neoforge_version
+processResources {
+	inputs.property "version", project.version
+	duplicatesStrategy = DuplicatesStrategy.INCLUDE
 
-    runs {
-        client {
-            client()
-        }
-
-        server {
-            server()
-            programArguments.add('nogui')
-        }
-
-        // Data generation run configuration (following BiomesOPlenty pattern)
-        data {
-            data()
-            programArguments.addAll '--mod', 'vastworlds', '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
-        }
-    }
-
-    mods {
-        vastworlds {
-            sourceSet sourceSets.main
-        }
-    }
-}
-
-tasks.withType(ProcessResources).configureEach {
-    duplicatesStrategy = 'exclude'
-
-    var replaceProperties = [
-        minecraft_version: minecraft_version,
-        neoforge_version: neoforge_version,
-        mod_version: mod_version,
-        mod_id: 'vastworlds',
-        mod_name: 'Vast Worlds',
-        mod_authors: 'VastWorlds Team',
-        mod_description: 'Massive terrain generation overhaul - Experience truly vast and epic Minecraft landscapes'
-    ]
-    inputs.properties replaceProperties
-
-    filesMatching(['META-INF/neoforge.mods.toml']) {
-        expand replaceProperties
-    }
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+	it.options.release = 21
 }
 
-tasks.withType(AbstractCopyTask).configureEach {
-    duplicatesStrategy = 'exclude'
+java {
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.base.archivesName.get()}" }
+	}
 }
 
 publishing {
-    publications {
-        register('mavenJava', MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            url "file://${project.projectDir}/repo"
-        }
-    }
-}
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
 
-idea {
-    module {
-        downloadSources = true
-        downloadJavadoc = true
-    }
+	repositories {
+		// Add publishing repositories here
+	}
 }
