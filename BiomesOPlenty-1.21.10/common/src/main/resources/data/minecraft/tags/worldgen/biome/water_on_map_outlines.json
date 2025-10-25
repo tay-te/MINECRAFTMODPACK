@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:bayou",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:hot_springs",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:floodplain",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:marsh",
+      "required": false
+    }
+  ]
+}

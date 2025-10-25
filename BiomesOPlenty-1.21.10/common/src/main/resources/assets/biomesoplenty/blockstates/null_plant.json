@@ -1,0 +1,8 @@
+{
+    "variants": {
+		"": [
+            { "model": "biomesoplenty:block/null_plant" },
+            { "model": "biomesoplenty:block/null_plant_alt" }
+        ]
+    }
+}

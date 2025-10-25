@@ -1,0 +1,25 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "biomesoplenty:coniferous_forest",
+            "required": false
+        },
+        {
+            "id": "biomesoplenty:field",
+            "required": false
+        },
+        {
+            "id": "biomesoplenty:maple_woods",
+            "required": false
+        },
+		{
+			"id": "biomesoplenty:snowy_coniferous_forest",
+			"required": false
+		},
+        {
+            "id": "biomesoplenty:tundra",
+            "required": false
+        }
+    ]
+}

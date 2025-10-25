@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "minecraft:end_stone",
+    "B": "biomesoplenty:liquid_null_bucket"
+  },
+  "pattern": [
+    " # ",
+    "#B#",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "id": "biomesoplenty:unmapped_end_stone"
+  }
+}

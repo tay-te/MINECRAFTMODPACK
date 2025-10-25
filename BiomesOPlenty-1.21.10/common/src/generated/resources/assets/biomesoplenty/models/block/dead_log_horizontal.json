@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "biomesoplenty:block/dead_log_top",
+    "side": "biomesoplenty:block/dead_log"
+  }
+}

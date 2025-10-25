@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross_emissive",
+  "textures": {
+    "cross": "biomesoplenty:block/glowshroom",
+    "cross_emissive": "biomesoplenty:block/glowshroom_emissive"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flower_pot_cross_emissive",
+  "textures": {
+    "cross_emissive": "biomesoplenty:block/potted_glowshroom_emissive",
+    "plant": "biomesoplenty:block/potted_glowshroom"
+  }
+}

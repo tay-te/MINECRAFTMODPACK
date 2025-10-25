@@ -1,0 +1,34 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"moss": "biomesoplenty:block/glowing_moss_block",
+		"emissive": "biomesoplenty:block/glowing_moss_block_emissive",
+		"particle": "#moss"
+	},
+	"elements": [
+		{   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+			"light_emission": 1,
+            "faces": {
+                "down":  { "texture": "#moss", "cullface": "down" },
+                "up":    { "texture": "#moss", "cullface": "up" },
+                "north": { "texture": "#moss", "cullface": "north" },
+                "south": { "texture": "#moss", "cullface": "south" },
+                "west":  { "texture": "#moss", "cullface": "west" },
+                "east":  { "texture": "#moss", "cullface": "east" }
+            }
+        },
+		{   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+			"light_emission": 8,
+            "faces": {
+                "down":  { "texture": "#emissive", "cullface": "down" },
+                "up":    { "texture": "#emissive", "cullface": "up" },
+                "north": { "texture": "#emissive", "cullface": "north" },
+                "south": { "texture": "#emissive", "cullface": "south" },
+                "west":  { "texture": "#emissive", "cullface": "west" },
+                "east":  { "texture": "#emissive", "cullface": "east" }
+            }
+        }
+	]
+}

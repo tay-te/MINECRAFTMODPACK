@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "axis=x": [
+      {
+        "model": "biomesoplenty:block/pine_log_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "biomesoplenty:block/pine_log_knot_horizontal",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=y": [
+      {
+        "model": "biomesoplenty:block/pine_log"
+      },
+      {
+        "model": "biomesoplenty:block/pine_log_knot"
+      }
+    ],
+    "axis=z": [
+      {
+        "model": "biomesoplenty:block/pine_log",
+        "x": 90
+      },
+      {
+        "model": "biomesoplenty:block/pine_log_knot",
+        "x": 90
+      }
+    ]
+  }
+}

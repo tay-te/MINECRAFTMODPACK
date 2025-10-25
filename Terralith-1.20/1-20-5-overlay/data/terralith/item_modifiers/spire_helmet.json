@@ -1,0 +1,56 @@
+[
+    {
+        "function": "minecraft:set_components",
+        "components": {
+            "minecraft:trim": {
+                "material": "minecraft:netherite",
+                "pattern": "minecraft:spire"
+            }
+        }
+    },
+    {
+        "function": "minecraft:set_enchantments",
+        "enchantments": {
+            "minecraft:protection": 3,
+            "minecraft:unbreaking": 2,
+            "minecraft:binding_curse": 1
+        }
+    },
+    {
+        "function": "minecraft:set_attributes",
+        "modifiers": [
+            {
+                "attribute": "minecraft:generic.armor",
+                "name": "",
+                "amount": 0,
+                "operation": "add_value",
+                "id": "4d3e3ffe-e2c8-4c4f-a85c-737efe0fef9c",
+                "slot": "head"
+            },
+            {
+                "attribute": "minecraft:generic.armor_toughness",
+                "name": "",
+                "amount": 3,
+                "operation": "add_value",
+                "id": "7304bc12-0c5e-4371-a6bb-7cdce0c704b4",
+                "slot": "head"
+            },
+            {
+                "attribute": "minecraft:generic.knockback_resistance",
+                "name": "",
+                "amount": 0.1,
+                "operation": "add_value",
+                "id": "6adb676a-e189-45a4-8d13-f82f2e767bf1",
+                "slot": "head"
+            },
+            {
+                "attribute": "minecraft:generic.movement_speed",
+                "name": "",
+                "amount": -0.08,
+                "operation": "add_multiplied_total",
+                "id": "e37618d5-f4f3-4163-91e7-58f252b716cb",
+                "slot": "head"
+            }
+        ]
+    }
+]

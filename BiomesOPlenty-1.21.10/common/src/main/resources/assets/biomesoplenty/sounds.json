@@ -1,0 +1,457 @@
+{
+  "block.blood.ambient": {
+    "sounds": [
+	  {
+        "name": "minecraft:liquid/lava",
+        "pitch": 0.5,
+		"volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.block.biomesoplenty.blood.ambient"
+  },
+  "block.pus_bubble.pop": {
+    "sounds": [
+      "minecraft:liquid/lavapop"
+    ],
+    "subtitle": "subtitles.block.biomesoplenty.pus_bubble.pop"
+  },
+  "block.spider_egg.break": {
+    "sounds": [
+	  "minecraft:mob/turtle/egg/egg_break1",
+      "minecraft:mob/turtle/egg/egg_break2"
+    ],
+    "subtitle": "subtitles.block.biomesoplenty.spider_egg.break"
+  },
+  "block.flesh_tendon.drip": {
+    "sounds": [
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip1",
+        "pitch": 0.7,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip1",
+        "pitch": 0.9,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip2",
+        "pitch": 0.7,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip2",
+        "pitch": 0.9,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip3",
+        "pitch": 0.7,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip3",
+        "pitch": 0.9,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip4",
+        "pitch": 0.7,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip4",
+        "pitch": 0.9,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip5",
+        "pitch": 0.7,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip5",
+        "pitch": 0.9,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip6",
+        "pitch": 0.7,
+        "volume": 0.3
+      },
+      {
+        "attenuation_distance": 8,
+        "name": "minecraft:block/beehive/drip6",
+        "pitch": 0.9,
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.block.biomesoplenty.flesh_tendon.drip"
+  },
+  "music_disc.wanderer": {
+    "sounds": [
+      {
+        "name": "biomesoplenty:records/wanderer",
+        "stream": true
+      }
+    ]
+  },
+  "music.overworld.origin_valley": {
+    "sounds": [
+	  {
+        "name": "minecraft:music/game/minecraft",
+        "stream": true
+      },
+	  {
+        "name": "minecraft:music/game/clark",
+        "stream": true
+      },
+	  {
+        "name": "minecraft:music/game/sweden",
+        "stream": true
+      },
+	  {
+        "name": "minecraft:music/game/dry_hands",
+        "stream": true
+      },
+	  {
+        "name": "minecraft:music/game/wet_hands",
+        "stream": true
+      },
+	  {
+        "name": "minecraft:music/game/mice_on_venus",
+        "stream": true
+      }
+    ]
+  },
+  "music.overworld.nostalgic": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/aria_math",
+        "stream": true,
+		"weight": 3
+      },
+      {
+        "name": "minecraft:music/game/creative/biome_fest",
+        "stream": true,
+		"weight": 3
+      },
+      {
+        "name": "minecraft:music/game/creative/blind_spots",
+        "stream": true,
+		"weight": 3
+      },
+      {
+        "name": "minecraft:music/game/creative/dreiton",
+        "stream": true,
+		"weight": 3
+      },
+      {
+        "name": "minecraft:music/game/creative/haunt_muskie",
+        "stream": true,
+		"weight": 3
+      },
+      {
+        "name": "minecraft:music/game/creative/taswell",
+        "stream": true,
+		"weight": 3
+      },
+	  {
+        "name": "minecraft:music/game/mice_on_venus",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/living_mice",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/subwoofer_lullaby",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/minecraft",
+        "stream": true,
+		"weight": 1
+      }
+    ]
+  },
+  "music.nether.crystalline_chasm": {
+    "sounds": [
+	  {
+        "name": "biomesoplenty:music/game/nether/redhead",
+        "stream": true,
+		"weight": 4,
+		"volume": 0.9
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/blot",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.4
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/timber",
+        "stream": true,
+		"weight": 2
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/mesh",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.8
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/cortisol",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.6
+      },
+	  {
+        "name": "minecraft:music/game/nether/concrete_halls",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/dead_voxel",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/warmth",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/ballad_of_the_cats",
+        "stream": true,
+		"weight": 1
+      }
+    ]
+  },
+  "music.nether.erupting_inferno": {
+    "sounds": [
+	  {
+        "name": "biomesoplenty:music/game/nether/blot",
+        "stream": true,
+		"weight": 4,
+		"volume": 0.4
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/redhead",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.9
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/timber",
+        "stream": true,
+		"weight": 2
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/mesh",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.8
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/cortisol",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.6
+      },
+	  {
+        "name": "minecraft:music/game/nether/concrete_halls",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/dead_voxel",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/warmth",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/ballad_of_the_cats",
+        "stream": true,
+		"weight": 1
+      }
+    ]
+  },
+  "music.nether.undergrowth": {
+    "sounds": [
+	  {
+        "name": "biomesoplenty:music/game/nether/timber",
+        "stream": true,
+		"weight": 4
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/redhead",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.9
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/blot",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.4
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/mesh",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.8
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/cortisol",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.6
+      },
+	  {
+        "name": "minecraft:music/game/nether/concrete_halls",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/dead_voxel",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/warmth",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/ballad_of_the_cats",
+        "stream": true,
+		"weight": 1
+      }
+    ]
+  },
+  "music.nether.visceral_heap": {
+    "sounds": [
+	  {
+        "name": "biomesoplenty:music/game/nether/mesh",
+        "stream": true,
+		"weight": 4,
+		"volume": 0.8
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/redhead",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.9
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/blot",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.4
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/timber",
+        "stream": true,
+		"weight": 2
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/cortisol",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.6
+      },
+	  {
+        "name": "minecraft:music/game/nether/concrete_halls",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/dead_voxel",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/warmth",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/ballad_of_the_cats",
+        "stream": true,
+		"weight": 1
+      }
+    ]
+  },
+  "music.nether.withered_abyss": {
+    "sounds": [
+	  {
+        "name": "biomesoplenty:music/game/nether/cortisol",
+        "stream": true,
+		"weight": 4,
+		"volume": 0.6
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/redhead",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.9
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/blot",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.4
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/timber",
+        "stream": true,
+		"weight": 2
+      },
+	  {
+        "name": "biomesoplenty:music/game/nether/mesh",
+        "stream": true,
+		"weight": 2,
+		"volume": 0.8
+      },
+	  {
+        "name": "minecraft:music/game/nether/concrete_halls",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/dead_voxel",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/warmth",
+        "stream": true,
+		"weight": 1
+      },
+	  {
+        "name": "minecraft:music/game/nether/ballad_of_the_cats",
+        "stream": true,
+		"weight": 1
+      }
+    ]
+  }
+}

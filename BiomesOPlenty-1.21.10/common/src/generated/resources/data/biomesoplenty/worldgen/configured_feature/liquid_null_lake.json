@@ -1,0 +1,20 @@
+{
+  "type": "biomesoplenty:lake",
+  "config": {
+    "barrier": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "biomesoplenty:null_end_stone"
+      }
+    },
+    "fluid": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "biomesoplenty:liquid_null",
+        "Properties": {
+          "level": "0"
+        }
+      }
+    }
+  }
+}
