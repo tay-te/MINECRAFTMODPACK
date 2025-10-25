@@ -20,8 +20,25 @@ java {
     withSourcesJar()
 }
 
+// Include generated resources in the main sourceSet
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/generated/resources'
+        }
+    }
+}
+
 repositories {
     mavenCentral()
+    maven {
+        name = "Modrinth Maven"
+        url = "https://api.modrinth.com/maven"
+    }
+}
+
+dependencies {
+    implementation "maven.modrinth:terrablender:4.1.0.3-neoforge"
 }
 
 neoForge {
@@ -36,6 +53,12 @@ neoForge {
             server()
             programArguments.add('nogui')
         }
+
+        // Data generation run configuration (following BiomesOPlenty pattern)
+        data {
+            data()
+            programArguments.addAll '--mod', 'vastworlds', '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
     }
 
     mods {
@@ -46,6 +69,8 @@ neoForge {
 }
 
 tasks.withType(ProcessResources).configureEach {
+    duplicatesStrategy = 'exclude'
+
     var replaceProperties = [
         minecraft_version: minecraft_version,
         neoforge_version: neoforge_version,
@@ -64,6 +89,10 @@ tasks.withType(ProcessResources).configureEach {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+tasks.withType(AbstractCopyTask).configureEach {
+    duplicatesStrategy = 'exclude'
 }
 
 publishing {

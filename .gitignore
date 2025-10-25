@@ -53,3 +53,4 @@ Thumbs.db
 *.rar
 hs_err_pid*
 replay_pid*
+src/generated/

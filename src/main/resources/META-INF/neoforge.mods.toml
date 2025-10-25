@@ -26,3 +26,10 @@ type = "required"
 versionRange = "[${minecraft_version},)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.vastworlds]]
+modId = "terrablender"
+type = "required"
+versionRange = "[4.0.0.0,)"
+ordering = "AFTER"
+side = "BOTH"
